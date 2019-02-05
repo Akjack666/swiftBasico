@@ -6,7 +6,7 @@
 //  Copyright © 2019 Dani rica. All rights reserved.
 //
 
-import UIKit
+import UIKit 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,11 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = .red
         
-        let starkSigilImage = UIImage(named: "codeIsComming")!
+        let starkSigilImage = UIImage(named: "codeIsComing")!
         let starkSigil = Sigil(image: starkSigilImage, description: "Lobo Huargo")
-    //    let lannisterSigil = Sigil(image: UIImage(named: "lannister")!, description: "Leon rampante")
-        
-       let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Se acerca el invierno")
+        let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Se acerca el invierno")
         
         
         let lannisterSigilImage = UIImage(named: "lannister")!
@@ -39,17 +37,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
        
         //creamos navigation controller
-        
-        let starkNavigationController = UINavigationController(rootViewController: starkViewController)
-        
-        let lannisterNavigationController = UINavigationController(rootViewController: lannisterViewController)
-        
-        
+        /*
+        let starkNavigationController = starkViewController.wrappedInNavigation()
+        let lannisterNavigationController = lannisterViewController.wrappedInNavigation()
+        */
         
         
-        
+        //Tab inferior
+     
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [starkNavigationController,lannisterNavigationController]
+        tabBarController.viewControllers = [starkViewController.wrappedInNavigation(),lannisterViewController.wrappedInNavigation()]
+       
+        
         
         window?.rootViewController = tabBarController
         
