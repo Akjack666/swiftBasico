@@ -22,19 +22,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = .red
         
-        let starkSigilImage = UIImage(named: "codeIsComing")!
-        let starkSigil = Sigil(image: starkSigilImage, description: "Lobo Huargo")
-        let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Se acerca el invierno")
+        
+        //crear los modelos
+        let houses = Repository.local.houses
         
         
-        let lannisterSigilImage = UIImage(named: "lannister")!
-        let lannisterSigil = Sigil(image: lannisterSigilImage, description: "Leon")
-        let lannisterHouse = House(name: "lannister", sigil: lannisterSigil, words: "oye mi rugido")
+        
+        //crear los controladores
+        var controllers = [UIViewController]()
+        for each in houses {
+            let controller = HouseDetailViewController(model: each).wrappedInNavigation()
+            controllers.append(controller)
+        }
         
         
-        let starkViewController = HouseDetailViewController(model: starkHouse)
-        let lannisterViewController = HouseDetailViewController(model: lannisterHouse)
-        
+      
        
         //creamos navigation controller
         /*
@@ -46,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Tab inferior
      
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [starkViewController.wrappedInNavigation(),lannisterViewController.wrappedInNavigation()]
+        tabBarController.viewControllers = controllers
        
         
         

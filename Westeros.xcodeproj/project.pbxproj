@@ -10,6 +10,8 @@
 		4580A14F2209DE2200ABBA6F /* targaryenSmall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4580A14C2209DE2200ABBA6F /* targaryenSmall.jpg */; };
 		4580A1502209DE2200ABBA6F /* lannister.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4580A14D2209DE2200ABBA6F /* lannister.jpg */; };
 		4580A1512209DE2200ABBA6F /* codeIsComing.png in Resources */ = {isa = PBXBuildFile; fileRef = 4580A14E2209DE2200ABBA6F /* codeIsComing.png */; };
+		B20E2A66220B704A00FDE35C /* RepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20E2A65220B704A00FDE35C /* RepositoryTest.swift */; };
+		B20E2A69220B714C00FDE35C /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20E2A68220B714C00FDE35C /* Repository.swift */; };
 		B2CBD3A4220392A30059145A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CBD3A3220392A30059145A /* AppDelegate.swift */; };
 		B2CBD3AB220392A60059145A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2CBD3AA220392A60059145A /* Assets.xcassets */; };
 		B2CBD3AE220392A60059145A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2CBD3AC220392A60059145A /* LaunchScreen.storyboard */; };
@@ -37,6 +39,8 @@
 		4580A14C2209DE2200ABBA6F /* targaryenSmall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = targaryenSmall.jpg; sourceTree = "<group>"; };
 		4580A14D2209DE2200ABBA6F /* lannister.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lannister.jpg; sourceTree = "<group>"; };
 		4580A14E2209DE2200ABBA6F /* codeIsComing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = codeIsComing.png; sourceTree = "<group>"; };
+		B20E2A65220B704A00FDE35C /* RepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTest.swift; sourceTree = "<group>"; };
+		B20E2A68220B714C00FDE35C /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		B2CBD3A0220392A30059145A /* Westeros.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Westeros.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2CBD3A3220392A30059145A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2CBD3AA220392A60059145A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +86,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		B20E2A67220B713000FDE35C /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				B20E2A68220B714C00FDE35C /* Repository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		B2CBD397220392A20059145A = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +133,7 @@
 				B2CBD3BA220392A70059145A /* Info.plist */,
 				B2CBD3C322039C380059145A /* HouseTest.swift */,
 				B2CBD3CA2206FC4B0059145A /* PersonTest.swift */,
+				B20E2A65220B704A00FDE35C /* RepositoryTest.swift */,
 			);
 			path = WesterosTests;
 			sourceTree = "<group>";
@@ -128,6 +141,7 @@
 		B2CBD3C522039E110059145A /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				B20E2A67220B713000FDE35C /* Repositories */,
 				B2CBD3C622039E330059145A /* House.swift */,
 				B2CBD3C82206F9A10059145A /* Sigil.swift */,
 				B2CBD3CC2206FDC10059145A /* Person.swift */,
@@ -257,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B20E2A69220B714C00FDE35C /* Repository.swift in Sources */,
 				B2CBD3DC2208FF290059145A /* UIViewController+Navigation.swift in Sources */,
 				B2CBD3D12208EA540059145A /* HouseDetailViewController.swift in Sources */,
 				B2CBD3C92206F9A10059145A /* Sigil.swift in Sources */,
@@ -272,6 +287,7 @@
 			files = (
 				B2CBD3C422039C380059145A /* HouseTest.swift in Sources */,
 				B2CBD3CB2206FC4B0059145A /* PersonTest.swift in Sources */,
+				B20E2A66220B704A00FDE35C /* RepositoryTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
