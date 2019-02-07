@@ -26,17 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //crear los modelos
         let houses = Repository.local.houses
         
-        
+      /*
         
         //crear los controladores
-        var controllers = [UIViewController]()
-        for each in houses {
-            let controller = HouseDetailViewController(model: each).wrappedInNavigation()
-            controllers.append(controller)
-        }
-        
-        
-      
+       let controllers =
+        houses
+            .map { HouseDetailViewController(model: $0 )}
+            .map { $0.wrappedInNavigation()}
+      */
        
         //creamos navigation controller
         /*
@@ -48,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Tab inferior
      
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = controllers
+        tabBarController.viewControllers = houses.map {HouseDetailViewController(model: $0).wrappedInNavigation()}
        
         
         
