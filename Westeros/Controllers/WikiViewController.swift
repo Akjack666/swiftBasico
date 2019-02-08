@@ -13,6 +13,9 @@ class WikiViewController: UIViewController {
     
     @IBOutlet var webView: WKWebView!
     
+    @IBOutlet var gray: UIActivityIndicatorView!
+    
+    
     let model: House
     
     init(model: House) {
@@ -26,20 +29,35 @@ class WikiViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        webView.navigationDelegate = self
         syncModelWithView()
 
 
     }
     
     func syncModelWithView() {
+        gray.isHidden = false
+        gray.startAnimating()
         title = model.name
         let request = URLRequest(url: model.wikiURL)
         webView.load(request)
         
     }
     
-    
 
-    
+}
 
+
+extension WikiViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        // Detener la animacion del activity indicator
+        gray.stopAnimating()
+        
+        // Ocultarlo
+        gray.isHidden = true
+    }
+    
+    
+   
 }
