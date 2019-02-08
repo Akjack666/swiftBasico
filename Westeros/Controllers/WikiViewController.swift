@@ -57,7 +57,18 @@ extension WikiViewController: WKNavigationDelegate {
         // Ocultarlo
         gray.isHidden = true
     }
-    
-    
-   
 }
+
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHander: @escaping (WKNavigationActionPolicy) -> Void) {
+        
+         let type = navigationAction.navigationType
+        switch type {
+        case .linkActivated:
+            decisionHander(.cancel)
+        case .formSubmitted:
+            decisionHander(.cancel)
+        default:
+            decisionHander(.allow)
+        }
+    
+    }

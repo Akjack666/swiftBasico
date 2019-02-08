@@ -44,16 +44,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Tab inferior
      
-      /*  let tabBarController = UITabBarController()
-        tabBarController.viewControllers = houses.map {HouseDetailViewController(model: $0).wrappedInNavigation()}*/
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = houses.map {HouseDetailViewController(model: $0).wrappedInNavigation()}
         
         //creamos el controlador de la tabla
         
-        let houseListViewController = HouseListViewController(model:houses)
+     //   let houseListViewController = HouseListViewController(model:houses)
        
         
         
-        window?.rootViewController = houseListViewController
+        window?.rootViewController = tabBarController
         
         return true
     }
